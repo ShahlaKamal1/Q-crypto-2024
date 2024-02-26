@@ -156,31 +156,16 @@ For example, for a single qubit, we get the familiar ONB $\ket0,\ket1$.
 \item\label{bell} Verify that the following four 2-qubit states form an ONB:
   \begin{itemize}
   \item $( \ket{00}+\ket{11} )/\sqrt2$
-
-    \begin{quotation}\color{blue}
-      (Your solution here.)
-    \end{quotation}
-
   \item $( \ket{00}-\ket{11} )/\sqrt2$
-
-    \begin{quotation}\color{blue}
-      (Your solution here.)
-    \end{quotation}
-
   \item $( \ket{01}+\ket{10} )/\sqrt2$
-
-    \begin{quotation}\color{blue}
-      (Your solution here.)
-    \end{quotation}
-
   \item $( \ket{01}-\ket{10} )/\sqrt2$
+  \end{itemize}
 
     \begin{quotation}\color{blue}
       (Your solution here.)
     \end{quotation}
 
-  \end{itemize}
-\item Write the following 2-qubit states as superposition of the basis defined in the~\ref{bell}:
+\item Write the following 2-qubit states as superposition of the basis defined in~\ref{bell}:
   \begin{itemize}
   \item $\ket{00}$
     \begin{quotation}\color{blue}
@@ -195,7 +180,6 @@ For example, for a single qubit, we get the familiar ONB $\ket0,\ket1$.
       (Your solution here.)
     \end{quotation}
   \end{itemize}
-\item ............................
 \end{enumerate}
 
 \section{Measurement I}
@@ -232,14 +216,13 @@ then the probability of outcome~$0$ is
 \begin{equation*}
   |\alpha_{00}|^2 + |\alpha_{01}|^2
 \end{equation*}
-and the probability of outcome~$1$ is is
+and the probability of outcome~$1$ is
 \begin{equation*}
   |\alpha_{10}|^2 + |\alpha_{11}|^2 = 1 - \left(  |\alpha_{00}|^2 + |\alpha_{01}|^2  \right).
 \end{equation*}
 
-For each of states in item~\ref{bell} of exercise~\ref{bas}, give the measurement probabilities of the outcome of
-measuring the left qubit.
-
+For each of the states in item~\ref{bell} of exercise~\ref{bas}, give the measurement probabilities of the outcome
+of measuring the left qubit.
 
 \begin{itemize}
 \item $( \ket{00}+\ket{11} )/\sqrt2$ \ANSWER{......}
@@ -248,11 +231,52 @@ measuring the left qubit.
 \item $( \ket{01}-\ket{10} )/\sqrt2$ \ANSWER{......}
 \end{itemize}
 
-\section{Blah 4}
+\section{Tensor products}
+
+Recall from the lecture the fact that that $(\phi,\psi)\to \phi\otimes\psi$ is ``bi-linear'', i.e.,
+\begin{itemize}
+\item For each fixed $\phi$ the mapping $\psi \mapsto \phi\otimes\psi$ is linear;
+\item For each fixed $\psi$ the mapping $\phi \mapsto \phi\otimes\psi$ is linear.
+\end{itemize}
+
+Use this to expand the following 2-qubit states in the computational basis (i.e., $\ket{0}\otimes\ket{0}$,
+$\ket{0}\otimes\ket{1}$, $\ket{1}\otimes\ket{0}$, $\ket{1}\otimes\ket{1}$):
+
+\begin{enumerate}[label=(\alph*)]
+\item $\ket0 \otimes \ket +$ \ANSWER{......}
+\item $\ket+ \otimes \ket 1$ \ANSWER{......}
+\item $\ket+ \otimes \ket +$ \ANSWER{......}
+\item $\ket+ \otimes \ket -$ \ANSWER{......}
+\item $\ket- \otimes \ket +$ \ANSWER{......}
+\item $\ket- \otimes \ket -$ \ANSWER{......}
+\end{enumerate}
+
+The construction of the basis in item~\ref{bell} of exercise~\ref{bas} can be carried out with $+$/$-$ instead of
+$0$/$1$:
+
+\begin{itemize}
+\item $( \ket{+}\otimes\ket{+}+\ket{-}\otimes\ket{-} )/\sqrt2$
+\item $( \ket{+}\otimes\ket{+}-\ket{-}\otimes\ket{-} )/\sqrt2$
+\item $( \ket{+}\otimes\ket{-}+\ket{-}\otimes\ket{+} )/\sqrt2$
+\item $( \ket{+}\otimes\ket{-}-\ket{-}\otimes\ket{+} )/\sqrt2$
+\end{itemize}
+
+\begin{enumerate}[resume,label=(\alph*)]
+\item Creative writing.  If a 2-qubit quantum register is in the state
+  \begin{equation*}
+    \Biggl(
+    \Bigl(  ( \ket{00}+\ket{11} )/\sqrt2  \Bigr)
+    +
+    \Bigl( ( \ket{+}\otimes\ket{+}+\ket{-}\otimes\ket{-} )/\sqrt2 \Bigr)
+    \Biggr)/\sqrt2
+  \end{equation*}
+  --- what does that mean?
+\end{enumerate}
+
 
 \end{document}
-
 %%% Local Variables:
 %%% mode: latex
 %%% fill-column: 115
 %%% End:
+f
