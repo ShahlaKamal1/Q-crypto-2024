@@ -1,0 +1,160 @@
+\documentclass[a4paper,10pt,reqno,nonamelimits]{article}
+%\usepackage[pagebackref,colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+%\usepackage[colorlinks=false]{hyperref}
+
+%\usepackage[top=2cm,bottom=2cm,left=1.5cm,right=7cm,marginparwidth=6.5cm]{geometry}
+
+%% \usepackage{makeidx}
+%%\usepackage{theorem}
+%%\usepackage{array}
+
+%\usepackage{mathptmx}        % PSNFSS
+%\usepackage{bookman}         % PSNFSS (wide!)
+\usepackage{newcent}         % PSNFSS
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsxtra}
+%\usepackage{stmaryrd}
+%\usepackage{mathabx}
+%\usepackage{eucal}
+\usepackage{mathrsfs}
+\usepackage{nicefrac}\newcommand{\nfrac}{\nicefrac}
+\usepackage{bbold}
+%%\usepackage{bm}
+\usepackage{graphicx}%\graphicspath{ {image/} }
+\usepackage{xcolor}
+% \usepackage[raggedright,IT,hang]{subfigure}
+%\usepackage{url}
+\usepackage{tikz}  \usetikzlibrary{quantikz}
+%\usepackage{wrapfig}
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=0em,itemindent=0em, labelindent=0pt,labelwidth=1.5em,labelsep=.5em, align=left}
+\newlist{txtenum}{enumerate}{1}
+\setlist[txtenum]{leftmargin=0em,itemindent=0em, labelindent=0pt,labelwidth=1em,labelsep=2ex, align=left}
+% \begin{enumerate}[resume,label=(\alph*)]...
+% \begin{enumerate}[label=\arabic*., leftmargin=1em,itemindent=.5em, labelindent=0pt,labelwidth=1em,labelsep=.5em, align=left]
+% * H spacing: leftmargin+itemindent = labelindent+labelwidth+labelsep
+% * Sub-numbers: just take ``label*'' instead of ``label''
+
+\usepackage[norelsize,boxed,noend,linesnumbered]{algorithm2e}\DontPrintSemicolon
+%\SetKwFor{RepeatTimes}{repeat}{times}{endrepeat}
+%\RestyleAlgo{ruled}
+% 'norelsize' takes care of incompatibility with amsart in old version of algorithm2e.
+%             Remove it once the new version is on the system
+% \begin{algorithm}[htbp OR H]
+%   Commands: \TitleOfAlgo{}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}\SetKwInOut{Oracle}{Oracle}
+% \For{}{} \Foreach{}{} \If{}{} \eIf{}{}{} \EsleIf{}{} \While{}{} \Return{}
+
+\usepackage{datetime}
+
+\newcounter{mysaveenumi}
+% U S A G E :
+% \setcounter{mysaveenumi}{\theenumi}
+% \begin{enumerate}[(a)]\setcounter{enumi}{\themysaveenumi}
+%   ...
+
+%\newtheorem{fact}[theorem]{Fact}
+% \numberwithin{theorem}{section}
+
+% \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+% \newcommand{\myparagraph}[1]{\mypar #1}
+% \newcommand{\myparagraphwskip}[1]{\smallskip\paragraph{#1}}
+% \newcommand{\claimpf}[1]{\myparagraph{\textit{#1}}}
+% %
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mypar}{\par\medskip\noindent}
+\newcommand{\myparbig}{\par\bigskip\noindent}
+
+\newcommand{\rip}[2]{\langle #1 \mid #2 \rangle}
+\newcommand{\cip}[2]{( #1 \mid #2 )}
+
+\newcommand{\Nm}[1]{\left\| #1 \right\|} % big norm
+\newcommand{\nm}[1]{\lVert #1 \rVert}    % small norm
+
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Img}{Img}
+\DeclareMathOperator{\tr}{tr}
+
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\KK}{\mathbb K}
+
+\renewcommand{\AA}{\mathbb A}
+\newcommand{\BB}{\mathbb B}
+\newcommand{\DD}{\mathbb D}
+\newcommand{\HH}{\mathbb H}
+
+\newcommand{\NN}{\mathbb N}
+\newcommand{\ZZ}{\mathbb Z}
+
+\newcommand{\LL}{\mathbb L}
+\newcommand{\MM}{\mathbb M}
+
+\newcommand{\PP}{\mathbb P}
+
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cG}{\mathcal G}
+
+\newcommand{\One}{\mathbb{1}}
+\newcommand{\one}{\mathbf{1}}
+
+\newcommand{\zero}{\mathbf 0}
+
+\newcommand{\orthogonal}{{\mathrel\bot}}
+
+
+\newcommand{\ANSWER}[1]{\marginpar{#1}}
+
+
+\newcommand{\HWNR}{\error}
+\newcommand{\HandOut}{\error}
+\newcommand{\DueDate}{\error}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\large MTAT.05.024 Quantum Crypto\\[2ex]
+  {\tiny
+    Assoc.~Prof.~Dirk Oliver Theis\\
+    Shahla Novruzova
+  }\\[2ex]
+  \LARGE Homework \# \HWNR}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+\date{%
+  \begin{tabular}{rl}
+    Handed out:                 &\HandOut                                           \\[1ex]
+    Due:                        &\DueDate                                           \\
+    {\small As PDF by email to} &{\small\texttt{shahla.novruzova@ut.ee}}            \\
+    {\small\quad subject:}      &{\small\texttt{QCRY-HW\HWNR-}\textit{lastname}}
+  \end{tabular}
+}
+\maketitle
+
+\thispagestyle{empty}
+
+\section{Blah 1}
+\section{Blah 2}
+\section{Blah 3}
+\section{Blah 4}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% fill-column: 98
+%%% End:
