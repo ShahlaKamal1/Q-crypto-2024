@@ -1,0 +1,258 @@
+\documentclass[a4paper,10pt,reqno,nonamelimits]{article}
+%\usepackage[pagebackref,colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+%\usepackage[colorlinks=false]{hyperref}
+
+%\usepackage[top=2cm,bottom=2cm,left=1.5cm,right=7cm,marginparwidth=6.5cm]{geometry}
+
+%% \usepackage{makeidx}
+%%\usepackage{theorem}
+%%\usepackage{array}
+
+%\usepackage{mathptmx}        % PSNFSS
+%\usepackage{bookman}         % PSNFSS (wide!)
+\usepackage{newcent}         % PSNFSS
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsxtra}
+%\usepackage{stmaryrd}
+%\usepackage{mathabx}
+%\usepackage{eucal}
+\usepackage{mathrsfs}
+\usepackage{nicefrac}\newcommand{\nfrac}{\nicefrac}
+\usepackage{bbold}
+%%\usepackage{bm}
+\usepackage{graphicx}%\graphicspath{ {image/} }
+\usepackage{xcolor}
+% \usepackage[raggedright,IT,hang]{subfigure}
+%\usepackage{url}
+\usepackage{tikz}  \usetikzlibrary{quantikz}
+%\usepackage{wrapfig}
+\usepackage{enumitem}
+% \setlist[enumerate]{leftmargin=0em,itemindent=0em, labelindent=0pt,labelwidth=1.5em,labelsep=.5em, align=left}
+% \newlist{txtenum}{enumerate}{1}
+% \setlist[txtenum]{leftmargin=0em,itemindent=0em, labelindent=0pt,labelwidth=1em,labelsep=2ex, align=left}
+% \begin{enumerate}[resume,label=(\alph*)]...
+% \begin{enumerate}[label=\arabic*., leftmargin=1em,itemindent=.5em, labelindent=0pt,labelwidth=1em,labelsep=.5em, align=left]
+% * H spacing: leftmargin+itemindent = labelindent+labelwidth+labelsep
+% * Sub-numbers: just take ``label*'' instead of ``label''
+
+\usepackage[norelsize,boxed,noend,linesnumbered]{algorithm2e}\DontPrintSemicolon
+%\SetKwFor{RepeatTimes}{repeat}{times}{endrepeat}
+%\RestyleAlgo{ruled}
+% 'norelsize' takes care of incompatibility with amsart in old version of algorithm2e.
+%             Remove it once the new version is on the system
+% \begin{algorithm}[htbp OR H]
+%   Commands: \TitleOfAlgo{}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}\SetKwInOut{Oracle}{Oracle}
+% \For{}{} \Foreach{}{} \If{}{} \eIf{}{}{} \EsleIf{}{} \While{}{} \Return{}
+
+\usepackage{datetime}
+
+\newcounter{mysaveenumi}
+% U S A G E :
+% \setcounter{mysaveenumi}{\theenumi}
+% \begin{enumerate}[(a)]\setcounter{enumi}{\themysaveenumi}
+%   ...
+
+%\newtheorem{fact}[theorem]{Fact}
+% \numberwithin{theorem}{section}
+
+% \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+% \newcommand{\myparagraph}[1]{\mypar #1}
+% \newcommand{\myparagraphwskip}[1]{\smallskip\paragraph{#1}}
+% \newcommand{\claimpf}[1]{\myparagraph{\textit{#1}}}
+% %
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mypar}{\par\medskip\noindent}
+\newcommand{\myparbig}{\par\bigskip\noindent}
+
+\newcommand{\rip}[2]{\langle #1 \mid #2 \rangle}
+\newcommand{\cip}[2]{( #1 \mid #2 )}
+
+\newcommand{\Nm}[1]{\left\| #1 \right\|} % big norm
+\newcommand{\nm}[1]{\lVert #1 \rVert}    % small norm
+
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Img}{Img}
+\DeclareMathOperator{\tr}{tr}
+
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\KK}{\mathbb K}
+
+\renewcommand{\AA}{\mathbb A}
+\newcommand{\BB}{\mathbb B}
+\newcommand{\DD}{\mathbb D}
+\newcommand{\HH}{\mathbb H}
+
+\newcommand{\NN}{\mathbb N}
+\newcommand{\ZZ}{\mathbb Z}
+
+\newcommand{\LL}{\mathbb L}
+\newcommand{\MM}{\mathbb M}
+
+\newcommand{\PP}{\mathbb P}
+
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cG}{\mathcal G}
+
+\newcommand{\One}{\mathbb{1}}
+\newcommand{\one}{\mathbf{1}}
+
+\newcommand{\zero}{\mathbf 0}
+
+\newcommand{\orthogonal}{{\mathrel\bot}}
+
+\newcommand{\ANSWER}[1]{\marginpar{#1}}
+
+
+\newcommand{\HWNR}{1}
+\newcommand{\HandOut}{Tue Feb.~27}
+\newcommand{\DueDate}{Tue March~5, 10:00}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\large MTAT.05.024 Quantum Crypto\\[2ex]
+  {\tiny
+    Assoc.~Prof.~Dirk Oliver Theis\\
+    Shahla Novruzova
+  }\\[2ex]
+  \LARGE Homework \# \HWNR}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+\date{%
+  \begin{tabular}{rl}
+    Handed out:                 &\HandOut                                           \\[1ex]
+    Due:                        &\DueDate                                           \\
+    {\small As PDF by email to} &{\small\texttt{shahla.novruzova@ut.ee}}            \\
+    {\small\quad subject:}      &{\small\texttt{QCRY-HW\HWNR-}\textit{lastname}}
+  \end{tabular}
+}
+\maketitle
+
+\thispagestyle{empty}
+
+\section{Orthonormal bases}\label{bas}
+
+Definition.  The ``computational (orthonormal) basis'' of the Hilbert space of an $n$-qubit quantum register
+consists of the states $\ket{x}$, where~$x$ ranges over all elements of $\{0,1\}^n$, i.e., length-$n$ bit strings.
+For example, for a single qubit, we get the familiar ONB $\ket0,\ket1$.
+
+\begin{enumerate}[label=(\alph*)]
+\item\label{bell} Verify that the following four 2-qubit states form an ONB:
+  \begin{itemize}
+  \item $( \ket{00}+\ket{11} )/\sqrt2$
+
+    \begin{quotation}\color{blue}
+      (Your solution here.)
+    \end{quotation}
+
+  \item $( \ket{00}-\ket{11} )/\sqrt2$
+
+    \begin{quotation}\color{blue}
+      (Your solution here.)
+    \end{quotation}
+
+  \item $( \ket{01}+\ket{10} )/\sqrt2$
+
+    \begin{quotation}\color{blue}
+      (Your solution here.)
+    \end{quotation}
+
+  \item $( \ket{01}-\ket{10} )/\sqrt2$
+
+    \begin{quotation}\color{blue}
+      (Your solution here.)
+    \end{quotation}
+
+  \end{itemize}
+\item Write the following 2-qubit states as superposition of the basis defined in the~\ref{bell}:
+  \begin{itemize}
+  \item $\ket{00}$
+    \begin{quotation}\color{blue}
+      (Your solution here.)
+    \end{quotation}
+  \item $\ket{01}$
+    \begin{quotation}\color{blue}
+      (Your solution here.)
+    \end{quotation}
+  \item $\ket{11}$
+    \begin{quotation}\color{blue}
+      (Your solution here.)
+    \end{quotation}
+  \end{itemize}
+\item ............................
+\end{enumerate}
+
+\section{Measurement I}
+
+A computational basis measurement of a single qubit has possible outcomes $0,1$.  If the single qubit is in state
+\begin{equation*}
+  \psi = \alpha_0\ket{0} + \alpha_1 \ket{1},
+\end{equation*}
+then the probability of outcome~$0$ is $|\alpha_0|^2$ and the probability of outcome~$1$ is is
+$|\alpha_1|^2 = 1 - |\alpha_0|^2$.
+
+For each of the following states, give the measurement probabilities of the outcomes:
+
+\begin{enumerate}[label=(\alph*)]
+\item $\ket0$ \ANSWER{.......}
+\item $\ket1$ \ANSWER{.......}
+\item $\ket{+}$ \ANSWER{.......}
+\item $\ket{-}$ \ANSWER{.......}
+\item $\ket{\circlearrowleft}$ \ANSWER{.......}
+\item $\ket{\circlearrowright}$ \ANSWER{.......}
+\end{enumerate}
+
+\section{Measurement II}
+
+A computational basis measurement of the \emph{left} one of two qubits has possible outcomes $0,1$.  If the two
+qubits are in the state
+\begin{equation*}
+  \psi =  \alpha_{00}\ket{00}
+        + \alpha_{01}\ket{01}
+        + \alpha_{10}\ket{10}
+        + \alpha_{11}\ket{11},
+\end{equation*}
+then the probability of outcome~$0$ is
+\begin{equation*}
+  |\alpha_{00}|^2 + |\alpha_{01}|^2
+\end{equation*}
+and the probability of outcome~$1$ is is
+\begin{equation*}
+  |\alpha_{10}|^2 + |\alpha_{11}|^2 = 1 - \left(  |\alpha_{00}|^2 + |\alpha_{01}|^2  \right).
+\end{equation*}
+
+For each of states in item~\ref{bell} of exercise~\ref{bas}, give the measurement probabilities of the outcome of
+measuring the left qubit.
+
+
+\begin{itemize}
+\item $( \ket{00}+\ket{11} )/\sqrt2$ \ANSWER{......}
+\item $( \ket{00}-\ket{11} )/\sqrt2$ \ANSWER{......}
+\item $( \ket{01}+\ket{10} )/\sqrt2$ \ANSWER{......}
+\item $( \ket{01}-\ket{10} )/\sqrt2$ \ANSWER{......}
+\end{itemize}
+
+\section{Blah 4}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% fill-column: 115
+%%% End:
