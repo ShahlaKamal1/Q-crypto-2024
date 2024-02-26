@@ -149,8 +149,8 @@
 \section{Orthonormal bases}\label{bas}
 
 Definition.  The ``computational (orthonormal) basis'' of the Hilbert space of an $n$-qubit quantum register
-consists of the states $\ket{x}$, where~$x$ ranges over all elements of $\{0,1\}^n$, i.e., length-$n$ bit strings.
-For example, for a single qubit, we get the familiar ONB $\ket0,\ket1$.
+consists of the states $\ket{\texttt{x}}$, where~$\texttt{x}$ ranges over all elements of $\{0,1\}^n$, i.e.,
+length-$n$ bit strings.  For example, for a single qubit, we get the familiar ONB $\ket0,\ket1$.
 
 \begin{enumerate}[label=(\alph*)]
 \item\label{bell} Verify that the following four 2-qubit states form an ONB:
@@ -165,7 +165,7 @@ For example, for a single qubit, we get the familiar ONB $\ket0,\ket1$.
       (Your solution here.)
     \end{quotation}
 
-\item Write the following 2-qubit states as superposition of the basis defined in~\ref{bell}:
+  \item Write the following 2-qubit states as superposition of the basis states defined in~\ref{bell}:
   \begin{itemize}
   \item $\ket{00}$
     \begin{quotation}\color{blue}
@@ -221,7 +221,7 @@ and the probability of outcome~$1$ is
   |\alpha_{10}|^2 + |\alpha_{11}|^2 = 1 - \left(  |\alpha_{00}|^2 + |\alpha_{01}|^2  \right).
 \end{equation*}
 
-For each of the states in item~\ref{bell} of exercise~\ref{bas}, give the measurement probabilities of the outcome
+For each of the states in item~\ref{bell} of exercise~\ref{bas}, give the measurement probabilities of the outcomes
 of measuring the left qubit.
 
 \begin{itemize}
@@ -251,6 +251,7 @@ $\ket{0}\otimes\ket{1}$, $\ket{1}\otimes\ket{0}$, $\ket{1}\otimes\ket{1}$):
 \item $\ket- \otimes \ket -$ \ANSWER{......}
 \end{enumerate}
 
+\noindent%
 The construction of the basis in item~\ref{bell} of exercise~\ref{bas} can be carried out with $+$/$-$ instead of
 $0$/$1$:
 
